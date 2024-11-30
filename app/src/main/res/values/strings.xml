@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">MyStories</string>
+    <string name="welcome_title">MyStories!</string>
+    <string name="welcome_btn_start">Mulai</string>
+    <string name="email_label">Masukkan email anda</string>
+    <string name="password_label">Masukkan kata sandi anda</string>
+    <string name="lbl_email">Email</string>
+    <string name="lbl_password">Kata Sandi</string>
+    <string name="err_password">Kata sandi harus minimal 8 karakter</string>
+    <string name="lbl_sign_in">Masuk</string>
+    <string name="app_title">My Story App</string>
+    <string name="lbl_instructions">Masukkan email dan kata sandi untuk masuk</string>
+    <string name="lbl_person">Nama Lengkap</string>
+    <string name="person_label">Masukkan nama lengkap anda</string>
+    <string name="lbl_instructions_register">Daftarkan diri anda melalui isi form berikut</string>
+    <string name="lbl_register">Simpan</string>
+    <string name="lbl_link_sign_up">Daftar</string>
+    <string name="lbl_sign_out">Sign Out</string>
+    <string name="lbl_description">some description</string>
+    <string name="desc_add_story">add new story</string>
+    <string name="btn_add_story_camera">Camera</string>
+    <string name="btn_add_story_gallery">Gallery</string>
+    <string name="btn_add_story_submit">Upload</string>
+    <string name="ed_description">Deskipsi</string>
+    <string name="img_preview">cover story</string>
+    <string name="empty_image_warning">Gambar kosong silakan pilih gambar terlebih dahulu</string>
+    <string name="name">Name</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="lbl_map">Peta</string>
+    <string name="normal_type">Normal</string>
+    <string name="satellite_type">Satellite</string>
+    <string name="terrain_type">Terrain</string>
+    <string name="hybrid_type">Hybrid</string>
+    <string name="retry">Coba lagi</string>
+    <string name="err_password_length">Kata sandi harus minimal 8 karakter</string>
+    <string name="image_content_description">Story Image</string>
+</resources>
