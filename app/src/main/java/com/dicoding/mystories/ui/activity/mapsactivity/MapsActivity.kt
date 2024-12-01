@@ -37,6 +37,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapsActivityViewModel.listStory.observe(this) {
             addManyMarker(it)
         }
+
+//        Log.d("VIEW MODEL LIST STORY", mapsActivityViewModel.listStory.toString())
     }
 
     override fun onMapReady(googleMap: GoogleMap) {

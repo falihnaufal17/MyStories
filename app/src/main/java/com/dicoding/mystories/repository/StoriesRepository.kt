@@ -54,12 +54,9 @@ class StoriesRepository (
         }
     }
 
-    suspend fun getStoriesMap(): ListStoryResponse? {
-        val response = apiService.getStories(1, 10).awaitResponse()
-        if (response.isSuccessful) {
-            return response.body()
-        } else {
-            throw HttpException(response)
-        }
+    suspend fun getStoriesMap(): List<ListStoryItem> {
+        val response = apiService.getStories(1, 10, 1)
+
+        return response.listStory
     }
 }

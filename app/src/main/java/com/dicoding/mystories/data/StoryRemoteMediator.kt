@@ -9,7 +9,6 @@ import com.dicoding.mystories.data.database.RemoteKeys
 import com.dicoding.mystories.data.database.StoryDatabase
 import com.dicoding.mystories.data.response.ListStoryItem
 import com.dicoding.mystories.data.retrofit.ApiService
-import retrofit2.awaitResponse
 
 @OptIn(ExperimentalPagingApi::class)
 class StoryRemoteMediator (
@@ -45,10 +44,8 @@ class StoryRemoteMediator (
         }
 
         try {
-            val responseData = apiService.getStories(page, state.config.pageSize)
-                .awaitResponse()
-                .body()
-                ?.listStory ?: emptyList()
+            val responseData = apiService.getStoriesNew(page, state.config.pageSize, 1)
+                .listStory
 
             val endOfPaginationReached = responseData.isEmpty()
 

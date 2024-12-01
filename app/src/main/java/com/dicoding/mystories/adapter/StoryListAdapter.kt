@@ -39,7 +39,7 @@ class StoryListAdapter : PagingDataAdapter<ListStoryItem, StoryListAdapter.MyVie
             holder.binding.description.transitionName = "story_description_${story.id}"
 
             holder.itemView.setOnClickListener {
-                story.id?.let { id ->
+                story.id.let { id ->
                     onItemClickCallback?.onItemClicked(holder.binding.imageView, holder.binding.name, holder.binding.description, id)
                 }
             }

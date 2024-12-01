@@ -30,8 +30,8 @@ class MapsActivityViewModel(private val storiesRepository: StoriesRepository) : 
         viewModelScope.launch {
             try {
                 val response = storiesRepository.getStoriesMap()
-                if (response != null) {
-                    _listStory.value = response.listStory
+                if (response.isNotEmpty()) {
+                    _listStory.value = response
                 }
             } catch (e: HttpException) {
                 _listStory.value = emptyList()

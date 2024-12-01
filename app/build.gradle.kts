@@ -80,15 +80,6 @@ dependencies {
     androidTestImplementation(libs.kotlinx.coroutines.test)
 
     testImplementation(libs.androidx.core.testing)
-    androidTestImplementation(libs.kotlinx.coroutines.test.v181)
-    androidTestImplementation(libs.androidx.paging.common.ktx)
-    androidTestImplementation(libs.androidx.room.testing)
-    androidTestImplementation(libs.androidx.core)
-    androidTestImplementation(libs.androidx.runner)
-    androidTestImplementation(libs.androidx.rules)
-    androidTestImplementation(libs.androidx.junit.v115)
-
-    testImplementation(libs.jetbrains.kotlinx.coroutines.test.v173)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockito.core)
     testImplementation(libs.mockito.inline)

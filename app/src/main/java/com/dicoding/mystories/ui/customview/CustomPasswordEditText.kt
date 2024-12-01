@@ -94,7 +94,7 @@ class CustomPasswordEditText @JvmOverloads constructor(
 
     private fun checkPasswordLength() {
         if ((text?.length ?: 0) < 8) {
-            setError(R.string.err_password_length.toString(), null)
+            setError(resources.getString(R.string.err_password_length), null)
         } else {
             error = null
         }
