@@ -56,10 +56,6 @@ class AddStoryActivity : AppCompatActivity() {
             if (it != null) {
                 showToast(it)
             }
-
-            val homeIntent = Intent(this, HomeActivity::class.java)
-            startActivity(homeIntent)
-            finish()
         }
 
         addStoryViewModel.isLoading.observe(this) {
@@ -71,6 +67,14 @@ class AddStoryActivity : AppCompatActivity() {
         addStoryViewModel.preview.observe(this) {
             if (it != null) {
                 showImage(it)
+            }
+        }
+
+        addStoryViewModel.isError.observe(this) {
+            if (!it) {
+                val homeIntent = Intent(this, HomeActivity::class.java)
+                startActivity(homeIntent)
+                finish()
             }
         }
     }

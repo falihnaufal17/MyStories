@@ -24,13 +24,19 @@ class AddStoryViewModel(private val storiesRepository: StoriesRepository) : View
     private val _preview = MutableLiveData<Uri?>()
     val preview: LiveData<Uri?> = _preview
 
+    private val _isError = MutableLiveData<Boolean>()
+    val isError: LiveData<Boolean> = _isError
+
     fun postStory(description: RequestBody, photo: MultipartBody.Part) {
         _isLoading.value = true
+
         viewModelScope.launch {
             try {
                 val response = storiesRepository.postStory(description, photo)
                 _message.value = response?.message
+                _isError.value = false
             } catch (e: HttpException) {
+                _isError.value = true
                 _message.value = "An unexpected error occurred: ${e.message}"
             } finally {
                 _isLoading.value = false

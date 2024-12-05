@@ -15,22 +15,27 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        val userPreference = UserPreference(this)
-        val token = userPreference.getUser().token
-
         setContentView(binding.root)
 
         binding.btnStart.setOnClickListener {
-            if (token != null) {
-                if (token.isEmpty()) {
-                    val signInIntent = Intent(this, SignInActivity::class.java)
-                    startActivity(signInIntent)
-                } else {
-                    val homeIntent = Intent(this, HomeActivity::class.java)
-                    startActivity(homeIntent)
-                    finish()
-                }
+            checkToken()
+        }
+    }
+
+    private fun checkToken() {
+        val userPreference = UserPreference(this)
+        val token = userPreference.getUser().token
+
+        if (token != null) {
+            if (token.isEmpty()) {
+                val signInIntent = Intent(this, SignInActivity::class.java)
+                startActivity(signInIntent)
+            } else {
+                val homeIntent = Intent(this, HomeActivity::class.java)
+                startActivity(homeIntent)
+                finish()
             }
         }
+
     }
 }
