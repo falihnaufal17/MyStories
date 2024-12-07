@@ -18,11 +18,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnStart.setOnClickListener {
-            checkToken()
+            onGettingStarted()
+        }
+
+        checkTokenLogin()
+    }
+
+    private fun checkTokenLogin() {
+        val userPreference = UserPreference(this)
+        val token = userPreference.getUser().token
+
+        if (token != null) {
+            if (token.isNotEmpty()) {
+                val homeIntent = Intent(this, HomeActivity::class.java)
+                startActivity(homeIntent)
+                finish()
+            }
         }
     }
 
-    private fun checkToken() {
+    private fun onGettingStarted() {
         val userPreference = UserPreference(this)
         val token = userPreference.getUser().token
 
@@ -36,6 +51,5 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
         }
-
     }
 }
